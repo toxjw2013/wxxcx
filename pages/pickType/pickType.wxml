@@ -1,0 +1,8 @@
+<view class='title'>请选择分类</view>
+<checkbox-group bindchange="checkboxChanged">
+  <label class="checkbox" wx:for='{{items}}'>
+    <checkbox value='{{item.name}}' checked='{{item.checked}}'>
+    {{item.value}}</checkbox>
+  </label>
+</checkbox-group>
+<button bindtap='answer'>开始考研</button>

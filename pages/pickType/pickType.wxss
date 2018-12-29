@@ -1,0 +1,14 @@
+/* pages/pickType/pickType.wxss */
+checkbox{
+  display: block;
+  margin-left: 200rpx;
+  margin-top: 30rpx;
+}
+.title{
+  text-align: center;
+  font-size: 60rpx;
+  color: #55f;
+}
+button{
+  margin-top: 380rpx;
+}

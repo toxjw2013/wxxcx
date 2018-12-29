@@ -1,0 +1,39 @@
+/* pages/answer/answer.wxss */
+image{
+  float: left;
+  width: 100%;
+  height: 1220rpx;
+}
+.header{
+  position: absolute;
+  top: 30rpx;
+  left: 80rpx;
+}
+.score{
+  margin-left: 260rpx;
+}
+.title{
+  position: absolute;
+  left: 80rpx;
+  top: 200rpx;
+}
+.sa{
+  position: absolute;
+  left: 140rpx;
+  top: 630rpx;
+}
+.sb{
+  position: absolute;
+  left: 140rpx;
+  top: 740rpx;
+}
+.sc{
+  position: absolute;
+  left: 140rpx;
+  top: 850rpx;
+}
+.sd{
+  position: absolute;
+  left: 140rpx;
+  top: 970rpx;
+}

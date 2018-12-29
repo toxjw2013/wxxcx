@@ -1,0 +1,18 @@
+<!--pages/answer/answer.wxml-->
+<image src='../img/bg.png'></image>
+<view class='body'>
+<view class='header'>
+  <span class='life'>剩余生命:{{life}}</span><span class='score'>得分:{{score}}</span>
+</view>
+<view class='title'>{{answer.title}}
+</view>
+<view>
+  <view class='sa' bindtap='answer' id='A'>{{answer.selectA}}</view>
+  <view class='sb' bindtap='answer' id='B'>{{answer.selectB}}</view>
+  <view class='sc' bindtap='answer' id='C'>{{answer.selectC}}</view>
+  <view class='sd' bindtap='answer' id='D'>{{answer.selectD}}</view>
+</view>
+
+<!-- <switch bindchange='bgplay' checked='true'>背景音乐</switch><switch>音效</switch> -->
+<!-- <audio id='bg' src='../mp3/bg.mp3' loop='true'></audio> -->
+</view>
