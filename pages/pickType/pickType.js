@@ -75,7 +75,7 @@ Page({
     })
   },
   checkboxChanged:function(e){
-    console.log(e.detail.value);
+    // console.log(e.detail.value);
     app.globalData.type=e.detail.value;
   }
 })

@@ -10,25 +10,29 @@ Page({
     life:5,
     score:0,
     answer:null,
+    answers:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that=this;
     // wx.createAudioContext('bg').play();
     // player.src = 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46';
     // player.autoplay = true;
     // player.loop = true;
-    console.log(app.globalData.type);
-    this.getAnswer();
+    // console.log(app.globalData.type);
+    that.init();
+   
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    // this.getAnswer();
   },
 
   /**
@@ -101,6 +105,10 @@ Page({
         confirmText:'重新开始',
         success(res){
           console.log(res.confirm);
+          wx.removeStorage({
+            key: 'answers',
+            success: function(res) {},
+          })
           if(res.confirm){
             wx.reLaunch({
               url: '../pickType/pickType',
@@ -113,16 +121,29 @@ Page({
     }
   },
   getAnswer:function(){
+    if(this.data.answers.length !=0){
+      var that=this;
+      var index = Math.floor(Math.random() * (that.data.answers.length));
+      console.log(that.data.answers.length);
+      that.setData({
+        answer: that.data.answers[index],
+      })
+    }
+  },
+  init:function(){
     var that = this;
+    var arr=null;
     wx.request({
       url: 'https://www.xmhz6.com/answer?type=' + app.globalData.type,
       method: 'GET',
-      success: function (res) {
-        var prop = res.data;
+      success:function(res){
+        // console.log(res.data);
         that.setData({
-          answer: prop,
+          answers:res.data,
         });
+        that.getAnswer();
       }
     })
+    // console.log(this.data.answers);
   }
 })
